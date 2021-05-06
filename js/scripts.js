@@ -1,5 +1,5 @@
 // Array contains Pokemon data
-pokemonList = [];
+var pokemonList = [];
 // Objects added to the defined array by different methods.
 pokemonList = [
   {name:'Bulbasaur',
