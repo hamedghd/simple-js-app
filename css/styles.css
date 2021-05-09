@@ -1,0 +1,27 @@
+:root {
+  --bgcolor1: #01579b;
+  --bgcolor2: #80D8FF;
+  --txtcolor1: black;
+  --fontfamily:  'Lato', sans-serif;
+}
+body {
+  background-color: var(--bgcolor1);
+  color: var(--txtcolor1);
+  font-family: var(--fontfamily);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+* {
+  box-sizing: border-box;
+}
+ul {
+  /*removes the markers/bullets*/
+  list-style-type: none;
+  padding: 20px;
+}
+ul li {
+  background-color: var(--bgcolor2);
+  margin: 5px;
+}
