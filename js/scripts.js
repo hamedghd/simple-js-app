@@ -55,12 +55,12 @@ pokemonList.push({name:'Nidorina' , height:0.8 , weight:20.0 , types:['poison']}
 // Creates a list of Pokemon names and properties
 for (let i = 0; i < pokemonList.length; i++) {
   // opens an unordered list tags
-  if (i===0) {document.write("<ul>");}
-  document.write("<li>");
+  if (i===0) {document.write("<ul class='list'>");}
+  document.write("<li class='list_items'>");
   document.write(pokemonList[i].name+" (height: "+pokemonList[i].height+")");
   // checks if the height is above 1.0, adds the note "Wow, that's big!" to the output.
   if (pokemonList[i].height > 1.0) {document.write(" - Wow, that's big!");}
   // closes the unordered list tags
   document.write("</li>");
-  if (i===pokemonList.length - 1) {document.write("</u>");}
+  if (i===pokemonList.length - 1) {document.write("</ul>");}
 }
