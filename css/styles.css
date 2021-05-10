@@ -16,12 +16,12 @@ body {
 * {
   box-sizing: border-box;
 }
-.list {
+ul {
   /*removes the markers/bullets*/
   list-style-type: none;
   padding: 20px;
 }
-.list_items {
+ul li {
   background-color: var(--bgcolor2);
   margin: 5px;
 }
