@@ -65,6 +65,12 @@ const pokemonRepository = (function () {
   function findPokemon (pokemonName) {
     return pokemonList.filter(e => e.name === pokemonName);
   }
+
+  return {
+    add: add,
+    getAll: getAll,
+    findPokemon: findPokemon
+  };
 })();
 
 pokemonList.push({ name: 'Charmeleon', height: 1.1, weight: 19.0, types: ['fire'] });
