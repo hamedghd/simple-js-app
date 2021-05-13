@@ -41,25 +41,30 @@ const pokemonRepository = (function () {
   }
 
   // This function checks wheather if the entered object has all the required keys.
-    function addv (pokemon) {
-      // Contains all the required keys.
-      const pokemonKeys = ['name', 'height', 'weight', 'types'];
+  function addv (pokemon) {
+    // Contains all the required keys.
+    const pokemonKeys = ['name', 'height', 'weight', 'types'];
 
-      // Checks wheather if the input is an object.
-      if (typeof (pokemon) === 'object') {
-        // Checks wheather if the input object has all the required keys.
-        // It is considered that the pokemon(input) keys are not necessarily in the same order of the pokemonKeys(database).
-        if (Object.keys(pokemon).filter(e => pokemonKeys.indexOf(e) !== -1).length === pokemonKeys.length) {
-          return true;
-        } else {
-          console.error('All the required keys are not provided!');
-          return false;
-        }
+    // Checks wheather if the input is an object.
+    if (typeof (pokemon) === 'object') {
+      // Checks wheather if the input object has all the required keys.
+      // It is considered that the pokemon(input) keys are not necessarily in the same order of the pokemonKeys(database).
+      if (Object.keys(pokemon).filter(e => pokemonKeys.indexOf(e) !== -1).length === pokemonKeys.length) {
+        return true;
       } else {
-        console.error('Input is not an object!');
+        console.error('All the required keys are not provided!');
         return false;
       }
+    } else {
+      console.error('Input is not an object!');
+      return false;
     }
+  }
+
+  // This function makes it possible to look for a specific pokomon by name.
+  function findPokemon (pokemonName) {
+    return pokemonList.filter(e => e.name === pokemonName);
+  }
 })();
 
 pokemonList.push({ name: 'Charmeleon', height: 1.1, weight: 19.0, types: ['fire'] });
