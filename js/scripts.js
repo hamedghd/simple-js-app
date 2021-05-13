@@ -34,6 +34,11 @@ const pokemonRepository = (function () {
   function getAll () {
     return pokemonList;
   }
+
+  // This method makes it possible to add new objects to the pokemonList from outside.
+  function add (pokemon) {
+    if (addv(pokemon)) { pokemonList.push(pokemon); }
+  }
 })();
 
 pokemonList.push({ name: 'Charmeleon', height: 1.1, weight: 19.0, types: ['fire'] });
