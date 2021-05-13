@@ -30,6 +30,10 @@ const pokemonRepository = (function () {
     weight: 8.5,
     types: ['fire']
   };
+  // This method gives access to print the pokemonList from outside.
+  function getAll () {
+    return pokemonList;
+  }
 })();
 
 pokemonList.push({ name: 'Charmeleon', height: 1.1, weight: 19.0, types: ['fire'] });
