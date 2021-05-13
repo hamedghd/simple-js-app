@@ -1,35 +1,36 @@
-// Array contains Pokemon data
-var pokemonList = [];
-// Objects added to the defined array by different methods.
-pokemonList = [
-  {
-    name: 'Bulbasaur',
+const pokemonRepository = (function () {
+  // Array contains Pokemon data
+  let pokemonList = [];
+  // Objects added to the defined array manually.
+  pokemonList = [
+    {
+      name: 'Bulbasaur',
+      height: 0.7,
+      weight: 6.9,
+      types: ['grass', 'poison']
+    },
+
+    {
+      name: 'Ivysaur',
+      height: 1.0,
+      weight: 13.0,
+      types: ['grass', 'poison']
+    },
+
+    {
+      name: 'Venusaur',
+      height: 2.0,
+      weight: 100.0,
+      types: ['grass', 'poison']
+    }
+  ];
+  pokemonList[3] = {
+    name: 'Charmander',
     height: 0.7,
-    weight: 6.9,
-    types: ['grass', 'poison']
-  },
-
-  {
-    name: 'Ivysaur',
-    height: 1.0,
-    weight: 13.0,
-    types: ['grass', 'poison']
-  },
-
-  {
-    name: 'Venusaur',
-    height: 2.0,
-    weight: 100.0,
-    types: ['grass', 'poison']
-  }
-];
-
-pokemonList[3] = {
-  name: 'Charmander',
-  height: 0.7,
-  weight: 8.5,
-  types: ['fire']
-};
+    weight: 8.5,
+    types: ['fire']
+  };
+})();
 
 pokemonList.push({ name: 'Charmeleon', height: 1.1, weight: 19.0, types: ['fire'] });
 pokemonList.push({ name: 'Charizard', height: 1.7, weight: 90.5, types: ['fire', 'flying'] });
