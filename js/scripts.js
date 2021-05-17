@@ -66,10 +66,38 @@ const pokemonRepository = (function () {
     return pokemonList.filter(e => e.name === pokemonName);
   }
 
+  // New functions
+  function addListItem (pokemon) {
+    // selects the created ul list
+    let pokemonList = document.querySelector('.pokemon-list');
+
+    // Creates a list item.
+    let listItem = document.createElement('li');
+
+    // Adds a class to the list items.
+    listItem.classList.add('pokemon-listItems');
+
+    // Creates a button element.
+    let button = document.createElement('button');
+
+    // Sets its innerText to be the Pokémon's name.
+    button.innerText = pokemon;
+
+    // Adds a class to the button item.
+    button.classList.add('button');
+
+    // Appends the button item to the list item.
+    listItem.appendChild(button);
+
+    // Appends the list items to its parent.
+    unorderedList.appendChild(listItem);
+  }
+
   return {
     add: add,
     getAll: getAll,
-    findPokemon: findPokemon
+    findPokemon: findPokemon,
+    addListItem: addListItem
   };
 })();
 
@@ -117,25 +145,5 @@ unorderedList.classList.add('pokemon-list');
 
 // Loop over the database
 pokemonRepository.getAll().forEach(function (item, index, array) {
-  // selects the created ul list
-  let pokemonList = document.querySelector('.pokemon-list');
-
-  // Creates a list item.
-  let listItem = document.createElement('li');
-
-  // Creates a button element.
-  let button = document.createElement('button');
-
-  // Sets its innerText to be the Pokémon's name.
-  button.innerText = item.name;
-
-  // Adds a class to the button item.
-  button.classList.add('button');
-
-  // Appends the button item to the list item.
-  listItem.appendChild(button);
-
-  // Appends the list items to its parent.
-  unorderedList.appendChild(listItem);
-
+  pokemonRepository.addListItem(item.name);
 });
