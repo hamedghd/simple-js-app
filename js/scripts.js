@@ -101,14 +101,41 @@ pokemonRepository.add({ name: 'Sandslash', height: 1.0, weight: 29.5, types: ['g
 pokemonRepository.add({ name: 'Nidoran', height: 0.4, weight: 7.0, types: ['poison'] });
 pokemonRepository.add({ name: 'Nidorina', height: 0.8, weight: 20.0, types: ['poison'] });
 
+// Refactoring the code using createElement(), appendChild() and classList functions.
+let main = document.querySelector('main');
+main.classList.add('page-body');
+let pageBody = document.querySelector('.page-body');
+
+// Adds an empty unordered list.
+pageBody.innerHTML = "<ul></ul>";
+
+// Selects the list.
+let unorderedList = document.querySelector('ul');
+
+// Adds a class to it.
+unorderedList.classList.add('pokemon-list');
+
+// Loop over the database
 pokemonRepository.getAll().forEach(function (item, index, array) {
-  // opens an unordered list tags
-  if (index === 0) { document.write("<ul class='list'>"); }
-  document.write('<li class="list_items">');
-  document.write(item.name + ' (height: ' + item.height + ')');
-  // checks if the height is above 1.0, adds the note "Wow, that's big!" to the output.
-  if (item.height > 1.0) { document.write(" - Wow, that's big!"); }
-  // closes the unordered list tags
-  document.write('</li>');
-  if (index === array.length - 1) { document.write('</ul>'); }
+  // selects the created ul list
+  let pokemonList = document.querySelector('.pokemon-list');
+
+  // Creates a list item.
+  let listItem = document.createElement('li');
+
+  // Creates a button element.
+  let button = document.createElement('button');
+
+  // Sets its innerText to be the Pokémon's name.
+  button.innerText = item.name;
+
+  // Adds a class to the button item.
+  button.classList.add('button');
+
+  // Appends the button item to the list item.
+  listItem.appendChild(button);
+
+  // Appends the list items to its parent.
+  unorderedList.appendChild(listItem);
+
 });
