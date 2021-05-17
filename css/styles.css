@@ -1,11 +1,17 @@
 :root {
-  --bgcolor1: #01579b;
-  --bgcolor2: #80D8FF;
+  /* --bgcolor1: #055a87;
+  --bgcolor2: #7da19d;
+  --bgcolor3: #f6d76b; */
+  --bgcolor1: #12223c;
+  --bgcolor2: #104a7d;
+  --bgcolor3: #f6d76b;
+  --bgcolor4: #45a9ff;
   --txtcolor1: black;
+  --txtcolor2: #f6f0f7;
   --fontfamily:  'Lato', sans-serif;
 }
 body {
-  background-color: var(--bgcolor1);
+  background-color: var(--bgcolor2);
   color: var(--txtcolor1);
   font-family: var(--fontfamily);
   font-weight: 400;
@@ -16,12 +22,36 @@ body {
 * {
   box-sizing: border-box;
 }
+.page-header {
+  background-color: var(--bgcolor1);
+  /* border-bottom: 5px solid black; */
+  padding: 20px;
+}
+.search-box {
+  float: left;
+  display: block;
+  border: none;
+  font-size: 20px;
+  color: var(--txtcolor2);
+}
+.button {
+  background-color: var(--bgcolor2);
+  padding: 3px;
+}
 .list {
   /*removes the markers/bullets*/
   list-style-type: none;
   padding: 20px;
 }
 .list_items {
-  background-color: var(--bgcolor2);
+  background-color: var(--bgcolor3);
   margin: 5px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .search-box {
+    float: none;
+    width: 100%;
+  }
 }
