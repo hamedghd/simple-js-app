@@ -29,6 +29,7 @@ body {
 }
 .pokemon-logo {
   width: 25%;
+  margin-top: 50px;
 }
 form {
   display: flex;
@@ -36,7 +37,7 @@ form {
 }
 .search-box {
   border: none;
-  font-size: 1.2vw;
+  font-size: 1.5vw;
   color: var(--txtcolor2);
 }
 /* .filter-box {
@@ -94,5 +95,6 @@ fieldset{
   }
   .pokemon-logo {
     width: 50%;
+    margin-top: 50px;
   }
 }
