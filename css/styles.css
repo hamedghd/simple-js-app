@@ -15,7 +15,7 @@ body {
   color: var(--txtcolor1);
   font-family: var(--fontfamily);
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.5vw;
   line-height: 1.6;
   text-align: center;
 }
@@ -27,13 +27,16 @@ body {
   /* border-bottom: 5px solid black; */
   padding: 20px;
 }
+.pokemon-logo {
+  width: 25%;
+}
 form {
   display: flex;
   align-items: center;
 }
 .search-box {
   border: none;
-  font-size: 20px;
+  font-size: 1.2vw;
   color: var(--txtcolor2);
 }
 /* .filter-box {
@@ -80,11 +83,22 @@ fieldset{
   padding: 10px;
 }
 @media screen and (max-width: 600px) {
+  body {
+    font-size: 4vw;
+  }
   .search-box {
     float: none;
     width: 100%;
+    font-size: 4vw;
+    margin: 0 auto;
   }
-  .filterbox {
-    display:block;
+
+  .pokemon-list {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .pokemon-logo {
+    width: 50%;
   }
 }
