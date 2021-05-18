@@ -105,7 +105,7 @@ const pokemonRepository = (function () {
   }
   // Searchbar:
   // Only displays the desired name
-  (function search() {
+  function search() {
     let searchInput = document.querySelector('.search-text');
 
     searchInput.addEventListener('input', function () {
@@ -120,7 +120,7 @@ const pokemonRepository = (function () {
         }
       });
     });
-  }())
+  }
 
 
   return {
@@ -128,6 +128,7 @@ const pokemonRepository = (function () {
     getAll: getAll,
     findPokemon: findPokemon,
     addListItem: addListItem,
+    search: search
   };
 })();
 
@@ -160,6 +161,8 @@ pokemonRepository.add({ name: 'Nidoran', height: 0.4, weight: 7.0, types: ['pois
 pokemonRepository.add({ name: 'Nidorina', height: 0.8, weight: 20.0, types: ['poison'] });
 
 // Loop over the database
-pokemonRepository.getAll().forEach(function (item, index, array) {
+pokemonRepository.getAll().forEach(function (item) {
   pokemonRepository.addListItem(item);
 });
+// Calls the function related to the search bar.
+pokemonRepository.search();
