@@ -66,14 +66,17 @@ const pokemonRepository = (function () {
     return pokemonList.filter(e => e.name === pokemonName);
   }
 
-  // New functions
+  // addList function - pokemon is an object
   function addListItem (pokemon) {
     // selects the created ul list
     let pokemonList = document.querySelector('.pokemon-list');
 
     // Creates a list item.
     let listItem = document.createElement('li');
-    listItem.setAttribute('id', pokemon);
+
+    // Adds an id for each pokemon.
+    listItem.setAttribute('id', pokemon.name);
+
     // Adds a class to the list items.
     listItem.classList.add('pokemon-listItems');
 
@@ -81,7 +84,7 @@ const pokemonRepository = (function () {
     let button = document.createElement('button');
 
     // Sets its innerText to be the Pokémon's name.
-    button.innerText = pokemon;
+    button.innerText = pokemon.name;
 
     // Adds a class to the button item.
     button.classList.add('button');
@@ -102,26 +105,29 @@ const pokemonRepository = (function () {
   }
   // Searchbar:
   // Only displays the desired name
-  let searchInput = document.querySelector('.search-text');
+  (function search() {
+    let searchInput = document.querySelector('.search-text');
 
-  searchInput.addEventListener('input', function () {
-    let pokemonList = document.querySelectorAll('.pokemon-listItems');
-    let searchText = searchInput.value.toLowerCase();
+    searchInput.addEventListener('input', function () {
+      let pokemonList = document.querySelectorAll('.pokemon-listItems');
+      let searchText = searchInput.value.toLowerCase();
 
-    pokemonList.forEach(function (pokemon) {
-      if (pokemon.innerText.toLowerCase().indexOf(searchText) > -1) {
-        pokemon.style.display = '';
-      } else {
-        pokemon.style.display = 'none';
-      }
+      pokemonList.forEach(function (pokemon) {
+        if (pokemon.innerText.toLowerCase().indexOf(searchText) > -1) {
+          pokemon.style.display = '';
+        } else {
+          pokemon.style.display = 'none';
+        }
+      });
     });
-  });
+  }())
+
 
   return {
     add: add,
     getAll: getAll,
     findPokemon: findPokemon,
-    addListItem: addListItem
+    addListItem: addListItem,
   };
 })();
 
@@ -155,5 +161,5 @@ pokemonRepository.add({ name: 'Nidorina', height: 0.8, weight: 20.0, types: ['po
 
 // Loop over the database
 pokemonRepository.getAll().forEach(function (item, index, array) {
-  pokemonRepository.addListItem(item.name);
+  pokemonRepository.addListItem(item);
 });
