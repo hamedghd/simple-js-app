@@ -73,7 +73,7 @@ const pokemonRepository = (function () {
 
     // Creates a list item.
     let listItem = document.createElement('li');
-
+    listItem.setAttribute('id', pokemon);
     // Adds a class to the list items.
     listItem.classList.add('pokemon-listItems');
 
@@ -90,8 +90,32 @@ const pokemonRepository = (function () {
     listItem.appendChild(button);
 
     // Appends the list items to its parent.
-    unorderedList.appendChild(listItem);
+    pokemonList.appendChild(listItem);
+
+    // Adds event listener to the button.
+    button.addEventListener('click', function () {
+      showDetails(pokemon);
+    });
   }
+  function showDetails (pokemon) {
+    console.log(pokemon);
+  }
+  // Searchbar:
+  // Only displays the desired name
+  let searchInput = document.querySelector('.search-text');
+
+  searchInput.addEventListener('input', function () {
+    let pokemonList = document.querySelectorAll('.pokemon-listItems');
+    let searchText = searchInput.value.toLowerCase();
+
+    pokemonList.forEach(function (pokemon) {
+      if (pokemon.innerText.toLowerCase().indexOf(searchText) > -1) {
+        pokemon.style.display = '';
+      } else {
+        pokemon.style.display = 'none';
+      }
+    });
+  });
 
   return {
     add: add,
@@ -128,20 +152,6 @@ pokemonRepository.add({ name: 'Sandshrew', height: 0.6, weight: 12.0, types: ['g
 pokemonRepository.add({ name: 'Sandslash', height: 1.0, weight: 29.5, types: ['ground'] });
 pokemonRepository.add({ name: 'Nidoran', height: 0.4, weight: 7.0, types: ['poison'] });
 pokemonRepository.add({ name: 'Nidorina', height: 0.8, weight: 20.0, types: ['poison'] });
-
-// Refactoring the code using createElement(), appendChild() and classList functions.
-let main = document.querySelector('main');
-main.classList.add('page-body');
-let pageBody = document.querySelector('.page-body');
-
-// Adds an empty unordered list.
-pageBody.innerHTML = "<ul></ul>";
-
-// Selects the list.
-let unorderedList = document.querySelector('ul');
-
-// Adds a class to it.
-unorderedList.classList.add('pokemon-list');
 
 // Loop over the database
 pokemonRepository.getAll().forEach(function (item, index, array) {
