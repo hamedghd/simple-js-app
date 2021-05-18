@@ -40,7 +40,6 @@ form {
   font-size: 20px;
   color: var(--txtcolor2);
   margin-left: 20px;
-
 }
 fieldset{
   display: flex;
@@ -55,16 +54,13 @@ fieldset{
   margin-left: 0;
   margin-right: 0;
 }
-
 .checkbox label{
   padding-left: 5px;
   padding-right: 30px;
 }
-
 .hidden {
   display: none;
 }
-
 .visible {
   display: list-item;
 }
@@ -83,10 +79,12 @@ fieldset{
   margin: 5px;
   padding: 10px;
 }
-
 @media screen and (max-width: 600px) {
   .search-box {
     float: none;
     width: 100%;
+  }
+  .filterbox {
+    display:block;
   }
 }
