@@ -15,14 +15,93 @@
       <form>
         <div class="search-box">
           Search name: <input type="text" placeholder="Bulbasaur" class="search-text">
-          <input type="submit" value="Search" class="button" id="search-input">
         </div>
+        <div class="filter-box">
+        <fieldset>
+          <div class="checkbox">
+            <input type="checkbox" id="normal" name="normal">
+            <label for="normal">normal</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="flying" name="flying">
+            <label for="flying">flying</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="fighting" name="fighting">
+            <label for="fighting">fighting</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="poison" name="poison">
+            <label for="poison">poison</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="ground" name="ground">
+            <label for="ground">ground</label><br>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="rock" name="rock">
+            <label for="rock">rock</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="bug" name="bug">
+            <label for="bug">bug</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="ghost" name="ghost">
+            <label for="ghost">ghost</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="steel" name="steel">
+            <label for="steel">steel</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="checkbox">
+            <input type="checkbox" id="fire" name="fire">
+            <label for="fire">fire</label><br>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="water" name="water">
+            <label for="water">water</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="grass" name="grass">
+            <label for="grass">grass</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="electric" name="electric">
+            <label for="electric">electric</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="psychic" name="psychic">
+            <label for="psychic">psychic</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="ice" name="ice">
+            <label for="ice">ice</label><br>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="dragon" name="dragon">
+            <label for="dragon">dragon</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="fairy" name="fairy">
+            <label for="fairy">fairy</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="dark" name="dark">
+            <label for="dark">dark</label>
+          </div>
+        </fieldset>
+      </div>
       </form>
       <br>
     </header>
-    <main>
-      <script src="js/scripts.js"></script>
+    <main class="page-body">
+      <ul class="pokemon-list"></ul>
     </main>
+    <script src="js/scripts.js"></script>
+
     <script src="js/tota11y.min.js"></script>
   </body>
 </html>
