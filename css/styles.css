@@ -36,7 +36,7 @@ form {
   font-size: 20px;
   color: var(--txtcolor2);
 }
-.filter-box {
+/* .filter-box {
   font-size: 20px;
   color: var(--txtcolor2);
   margin-left: 20px;
@@ -57,7 +57,7 @@ fieldset{
 .checkbox label{
   padding-left: 5px;
   padding-right: 30px;
-}
+} */
 .hidden {
   display: none;
 }
