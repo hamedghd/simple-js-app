@@ -61,12 +61,6 @@ fieldset{
   padding-left: 5px;
   padding-right: 30px;
 } */
-.hidden {
-  display: none;
-}
-.visible {
-  display: list-item;
-}
 .button {
   background-color: var(--bgcolor4);
   padding: 5px;
