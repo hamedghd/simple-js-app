@@ -34,8 +34,14 @@ body {
   font-size: 20px;
   color: var(--txtcolor2);
 }
+.hidden {
+  display: none;
+}
+.visible {
+  display: list-item;
+}
 .button {
-  background-color: var(--bgcolor2);
+  background-color: var(--bgcolor4);
   padding: 3px;
 }
 .pokemon-list {
