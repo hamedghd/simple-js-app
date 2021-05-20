@@ -76,6 +76,8 @@ fieldset{
   list-style-type: none;
   padding: 20px;
   margin: 0 auto;
+  width: 600px;
+
 }
 .pokemon-listItems {
   background-color: var(--bgcolor3);
@@ -102,5 +104,13 @@ fieldset{
   }
   .pokemon-logo {
     width: 50%;
+  }
+}
+@media screen and (max-width: 300px) {
+  body {
+    font-size: 6vw;
+  }
+  .button {
+    width: 100px;
   }
 }
