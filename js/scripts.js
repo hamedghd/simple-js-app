@@ -1,40 +1,15 @@
-const pokemonRepository = (function () {
+let pokemonRepository = (function () {
+  // Creates an array for pokemon objects.
   // Array contains Pokemon data
   let pokemonList = [];
-  // Objects added to the defined array manually.
-  pokemonList = [
-    {
-      name: 'Bulbasaur',
-      height: 0.7,
-      weight: 6.9,
-      types: ['grass', 'poison']
-    },
+  // Adds API link.
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
-    {
-      name: 'Ivysaur',
-      height: 1.0,
-      weight: 13.0,
-      types: ['grass', 'poison']
-    },
-
-    {
-      name: 'Venusaur',
-      height: 2.0,
-      weight: 100.0,
-      types: ['grass', 'poison']
-    }
-  ];
-  pokemonList[3] = {
-    name: 'Charmander',
-    height: 0.7,
-    weight: 8.5,
-    types: ['fire']
-  };
   // This method gives access to print the pokemonList from outside.
   function getAll () {
     return pokemonList;
   }
-
+  // Adds each pokemon from results to the pokemonList
   // This method makes it possible to add new objects to the pokemonList from outside.
   function add (pokemon) {
     if (addv(pokemon)) { pokemonList.push(pokemon); }
@@ -43,7 +18,7 @@ const pokemonRepository = (function () {
   // This function checks wheather if the entered object has all the required keys.
   function addv (pokemon) {
     // Contains all the required keys.
-    const pokemonKeys = ['name', 'height', 'weight', 'types'];
+    const pokemonKeys = ['name', 'detailsUrl'];
 
     // Checks wheather if the input is an object.
     if (typeof (pokemon) === 'object') {
@@ -59,11 +34,6 @@ const pokemonRepository = (function () {
       console.error('Input is not an object!');
       return false;
     }
-  }
-
-  // This function makes it possible to look for a specific pokomon by name.
-  function findPokemon (pokemonName) {
-    return pokemonList.filter(e => e.name === pokemonName);
   }
 
   // addList function - pokemon is an object
@@ -100,12 +70,46 @@ const pokemonRepository = (function () {
       showDetails(pokemon);
     });
   }
+
   function showDetails (pokemon) {
-    console.log(pokemon);
+    loadDetails(pokemon).then(function () {
+      console.log(pokemon);
+    });
+  }
+
+  // Loads data from an external API
+  function loadList () {
+    return fetch(apiUrl).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      json.results.forEach(function (item) {
+        let pokemon = {
+          name: item.name,
+          detailsUrl: item.url
+        };
+        add(pokemon);
+      });
+    }).catch(function (e) {
+      console.error(e);
+    })
+  }
+  // Loads details.
+  function loadDetails (item) {
+    let url = item.detailsUrl;
+    return fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (details) {
+      // Now we add the details to the item
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = details.types;
+    }).catch(function (e) {
+      console.error(e);
+    });
   }
   // Searchbar:
   // Only displays the desired name
-  function search() {
+  function search () {
     let searchInput = document.querySelector('.search-text');
 
     searchInput.addEventListener('input', function () {
@@ -121,48 +125,22 @@ const pokemonRepository = (function () {
       });
     });
   }
-
-
   return {
     add: add,
     getAll: getAll,
-    findPokemon: findPokemon,
     addListItem: addListItem,
-    search: search
+    search: search,
+    loadList: loadList,
+    loadDetails: loadDetails
   };
 })();
 
-// Adds new database.
-pokemonRepository.add({ name: 'Charmeleon', height: 1.1, weight: 19.0, types: ['fire'] });
-pokemonRepository.add({ name: 'Charizard', height: 1.7, weight: 90.5, types: ['fire', 'flying'] });
-pokemonRepository.add({ name: 'Squirtle', height: 0.5, weight: 9.0, types: ['water'] });
-pokemonRepository.add({ name: 'Wartortle', height: 1.0, weight: 22.5, types: ['water'] });
-pokemonRepository.add({ name: 'Blastoise', height: 1.6, weight: 85.5, types: ['water'] });
-pokemonRepository.add({ name: 'Caterpie', height: 0.3, weight: 2.9, types: ['bug'] });
-pokemonRepository.add({ name: 'Metapod', height: 0.7, weight: 9.9, types: ['bug'] });
-pokemonRepository.add({ name: 'Butterfree', height: 1.1, weight: 32, types: ['bug', 'flying'] });
-pokemonRepository.add({ name: 'Weedle', height: 0.3, weight: 3.2, types: ['bug', 'poison'] });
-pokemonRepository.add({ name: 'Kakuna', height: 0.6, weight: 10.0, types: ['bug', 'poison'] });
-pokemonRepository.add({ name: 'Beedrill', height: 1.0, weight: 29.5, types: ['bug', 'poison'] });
-pokemonRepository.add({ name: 'Pidgey', height: 0.3, weight: 1.8, types: ['flying', 'normal'] });
-pokemonRepository.add({ name: 'Pidgeotto', height: 1.1, weight: 30, types: ['flying', 'normal'] });
-pokemonRepository.add({ name: 'Pidgeot', height: 1.5, weight: 39.5, types: ['flying', 'normal'] });
-pokemonRepository.add({ name: 'Rattata', height: 0.3, weight: 3.5, types: ['normal'] });
-pokemonRepository.add({ name: 'Raticate', height: 0.7, weight: 18.5, types: ['normal'] });
-pokemonRepository.add({ name: 'Spearow', height: 0.3, weight: 2.0, types: ['flying', 'normal'] });
-pokemonRepository.add({ name: 'Fearow', height: 1.2, weight: 38.0, types: ['flying', 'normal'] });
-pokemonRepository.add({ name: 'Ekans', height: 2.0, weight: 6.9, types: ['poison'] });
-pokemonRepository.add({ name: 'Arbok', height: 3.5, weight: 65.0, types: ['poison'] });
-pokemonRepository.add({ name: 'Pikachu', height: 0.4, weight: 6.0, types: ['electric'] });
-pokemonRepository.add({ name: 'Raichu', height: 0.8, weight: 30.0, types: ['electric'] });
-pokemonRepository.add({ name: 'Sandshrew', height: 0.6, weight: 12.0, types: ['ground'] });
-pokemonRepository.add({ name: 'Sandslash', height: 1.0, weight: 29.5, types: ['ground'] });
-pokemonRepository.add({ name: 'Nidoran', height: 0.4, weight: 7.0, types: ['poison'] });
-pokemonRepository.add({ name: 'Nidorina', height: 0.8, weight: 20.0, types: ['poison'] });
-
 // Loop over the database
-pokemonRepository.getAll().forEach(function (item) {
-  pokemonRepository.addListItem(item);
+pokemonRepository.loadList().then(function() {
+  // Now the data is loaded!
+  pokemonRepository.getAll().forEach(function(pokemon){
+    pokemonRepository.addListItem(pokemon);
+  });
 });
 // Calls the function related to the search bar.
 pokemonRepository.search();
