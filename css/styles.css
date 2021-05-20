@@ -29,7 +29,7 @@ body {
 }
 .pokemon-logo {
   width: 25%;
-  margin-top: 50px;
+  margin: 2%;
 }
 form {
   display: flex;
@@ -92,7 +92,9 @@ fieldset{
     font-size: 4vw;
     margin: 0 auto;
   }
-
+  .button {
+    width: 150px;
+  }
   .pokemon-list {
     display: block;
     width: 100%;
@@ -100,6 +102,5 @@ fieldset{
   }
   .pokemon-logo {
     width: 50%;
-    margin-top: 50px;
   }
 }
