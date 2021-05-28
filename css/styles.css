@@ -3,35 +3,29 @@
   --bgcolor2: #104a7d;
   --bgcolor3: #f6d76b;
   --bgcolor4: #45a9ff;
-  --txtcolor1: #f6f0f7;
-  --fontfamily:  'Lato', sans-serif;
+  --txtcolor1: #black;
+  --txtcolor2: #f6f0f7;
 }
 body {
-  background-color: var(--bgcolor2);
-  font-family: var(--fontfamily);
   text-align: center;
+  background-color: var(--bgcolor2);
 }
-.page-header {
+.container-fluid {
   background-color: var(--bgcolor1);
-  padding: 20px;
 }
 .pokemon-logo {
-  /* width: 25%; */
   max-width: 100%;
-  margin: 2%;
 }
-form {
-color: var(--txtcolor1);
-}
-/* .search-box {
-  border: none;
-  font-size: 1.5vw;
-  color: var(--txtcolor1);
-} */
 .btn-primary {
+  background-color: var(--bgcolor4);
+  color: var(--txtcolor1);
   width: 250px;
   max-width: 100%;
   margin: 2px;
+}
+.btn-primary:hover {
+  background-color: var(--bgcolor1);
+  color: var(--txtcolor2);
 }
 .list-group {
   /*removes the markers/bullets*/
@@ -50,12 +44,3 @@ color: var(--txtcolor1);
 .modal-image {
   width: 50%;
 }
-/* @media screen and (max-width: 600px) {
-  .search-box {
-    float: none;
-    width: 100%;
-    font-size: 4vw;
-    margin: 0 auto;
-  }
-
-} */
