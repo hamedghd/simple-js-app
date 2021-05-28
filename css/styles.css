@@ -21,14 +21,13 @@ body {
   margin: 2%;
 }
 form {
-  display: flex;
-  align-items: center;
+color: var(--txtcolor1);
 }
-.search-box {
+/* .search-box {
   border: none;
   font-size: 1.5vw;
   color: var(--txtcolor1);
-}
+} */
 .btn-primary {
   width: 250px;
   max-width: 100%;
@@ -51,7 +50,7 @@ form {
 .modal-image {
   width: 50%;
 }
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .search-box {
     float: none;
     width: 100%;
@@ -59,4 +58,4 @@ form {
     margin: 0 auto;
   }
 
-}
+} */
