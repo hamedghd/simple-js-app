@@ -166,28 +166,6 @@ let pokemonRepository = (function () {
     modalBody.appendChild(contentElement);
     modalBody.appendChild(contentElement2);
   }
-  // Hide the modoal window.
-  function hideModal () {
-    modalContainer.classList.remove('is-visible');
-  }
-
-  // Close the modal by clicking outside of the modal.
-  modalContainer.addEventListener('click', (e) => {
-    // Since this is also triggered when clicking INSIDE the modal
-    // We only want to close if the user clicks directly on the overlay
-    let target = e.target;
-    if (target === modalContainer) {
-      hideModal();
-    }
-  });
-  // Closes the modal by pressing the Escape key.
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-      hideModal();
-    }
-  });
-
   return {
     add: add,
     getAll: getAll,
