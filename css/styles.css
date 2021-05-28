@@ -44,3 +44,15 @@ body {
 .modal-image {
   width: 50%;
 }
+
+.modal-header, .modal-footer {
+  background-color: var(--bgcolor4);
+}
+.btn-secondary {
+  background-color: var(--bgcolor2);
+  color: var(--txtcolor2);
+}
+mark {
+  background-color: var(--bgcolor3);
+  color: var(--txtcolor1);
+}
