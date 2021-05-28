@@ -141,23 +141,16 @@ let pokemonRepository = (function () {
       });
     });
   }
+  // Updates the showModal function with Bootstrap classes.
+  // Removes the unneeded elements.
   function showModal (pokemon) {
-    modalContainer.classList.add('is-visible');
-
-    // Clear all existing modal content
-    modalContainer.innerHTML = '';
-    let modal = document.createElement('div');
-    modal.classList.add('modal');
-
-    // Add the new modal content
-    let closeButtonElement = document.createElement('button');
-    closeButtonElement.classList.add('modal-close');
-    closeButtonElement.innerText = 'Close';
-    closeButtonElement.addEventListener('click', hideModal);
-    // Add modal's title.
-    let titleElement = document.createElement('h1');
+    // Add modal title.
+    let titleElement = document.querySelector('.modal-title');
     titleElement.innerText = pokemon.name;
     // Add pokemon image.
+    let modalBody = document.querySelector('.modal-body');
+    // Clear all existing modal content
+    modalBody.innerHTML = '';
     let imageElement = document.createElement('img');
     imageElement.setAttribute('src', pokemon.imageUrl);
     imageElement.setAttribute('alt', 'pokemon-image');
@@ -169,13 +162,9 @@ let pokemonRepository = (function () {
     contentElement2.innerText = 'Types: ' + pokemon.types;
 
     // Appends the elements to the parent.
-    modal.appendChild(closeButtonElement);
-    modal.appendChild(titleElement);
-    modal.appendChild(imageElement);
-    modal.appendChild(contentElement);
-    modal.appendChild(contentElement2);
-    modalContainer.appendChild(modal);
-    modalContainer.classList.add('is-visible');
+    modalBody.appendChild(imageElement);
+    modalBody.appendChild(contentElement);
+    modalBody.appendChild(contentElement2);
   }
   // Hide the modoal window.
   function hideModal () {
