@@ -53,7 +53,6 @@ let pokemonRepository = (function () {
     // Adds a class to the list items.
     // Adds a Bootstrap class.
     listItem.classList.add('group-list-item');
-
     // Creates a button element.
     let button = document.createElement('button');
 
