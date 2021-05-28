@@ -121,13 +121,15 @@ let pokemonRepository = (function () {
       console.error(e);
     });
   }
+  // Updates the search function with Bootsrtap classes.
   // Searchbar:
   // Only displays the desired name
   function search () {
     let searchInput = document.querySelector('.search-text');
 
     searchInput.addEventListener('input', function () {
-      let pokemonList = document.querySelectorAll('.pokemon-listItems');
+      // Adds a Bootstrap class.
+      let pokemonList = document.querySelectorAll('.group-list-item');
       let searchText = searchInput.value.toLowerCase();
 
       pokemonList.forEach(function (pokemon) {
