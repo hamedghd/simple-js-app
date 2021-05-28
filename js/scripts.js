@@ -124,7 +124,7 @@ let pokemonRepository = (function () {
   // Searchbar:
   // Only displays the desired name
   function search () {
-    let searchInput = document.querySelector('.search-text');
+    let searchInput = document.querySelector('#search-bar');
 
     searchInput.addEventListener('input', function () {
       // Adds a Bootstrap class.
