@@ -37,11 +37,12 @@ let pokemonRepository = (function () {
       return false;
     }
   }
-
+  // Updates the addList function with Bootstrap classes.
   // addList function - pokemon is an object
   function addListItem (pokemon) {
     // selects the created ul list
-    let pokemonList = document.querySelector('.pokemon-list');
+    // Add a Bootstrap class.
+    let pokemonList = document.querySelector('.list-group');
 
     // Creates a list item.
     let listItem = document.createElement('li');
@@ -50,7 +51,8 @@ let pokemonRepository = (function () {
     listItem.setAttribute('id', pokemon.name);
 
     // Adds a class to the list items.
-    listItem.classList.add('pokemon-listItems');
+    // Adds a Bootstrap class.
+    listItem.classList.add('group-list-item');
 
     // Creates a button element.
     let button = document.createElement('button');
@@ -59,8 +61,12 @@ let pokemonRepository = (function () {
     button.innerText = pokemon.name;
 
     // Adds a class to the button item.
-    button.classList.add('button');
-
+    // Adds a Bootstrap class.
+    button.classList.add('btn');
+    button.classList.add('btn-primary');
+    button.classList.add('btn-lg');
+    button.setAttribute('data-target', "#exampleModal");
+    button.setAttribute('data-toggle',"modal");
     // Appends the button item to the list item.
     listItem.appendChild(button);
 
