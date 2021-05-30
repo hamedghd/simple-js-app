@@ -155,9 +155,9 @@ let pokemonRepository = (function () {
     imageElement.setAttribute('alt', 'pokemon-image');
     imageElement.setAttribute('class', 'modal-image');
     // Add some properties.
-    let contentElement = document.createElement('h5');
+    let contentElement = document.createElement('p');
     contentElement.innerText = 'Height: ' + pokemon.height;
-    let contentElement2 = document.createElement('h5');
+    let contentElement2 = document.createElement('p');
     contentElement2.innerHTML = 'Types: <mark></mark>';
 
     // Appends the elements to the parent.
