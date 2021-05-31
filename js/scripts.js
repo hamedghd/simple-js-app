@@ -154,10 +154,9 @@ let pokemonRepository = (function () {
     imageElement.setAttribute('class', 'modal-image');
     // Add some properties.
     let contentElement = document.createElement('p');
-    contentElement.innerText = 'Height: ' + pokemon.height;
+    contentElement.innerHTML = '<b>Height: </b>' + pokemon.height;
     let contentElement2 = document.createElement('p');
-    contentElement2.innerHTML = 'Types: <mark></mark>';
-
+    contentElement2.innerHTML = '<b>Types: </b><mark></mark>';
     // Appends the elements to the parent.
     modalBody.appendChild(imageElement);
     modalBody.appendChild(contentElement);
