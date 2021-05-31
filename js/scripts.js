@@ -96,7 +96,7 @@ let pokemonRepository = (function () {
         add(pokemon);
       });
     }).catch(function (e) {
-      console.error(e);
+      window.alert(e);
     })
   }
   // Loads details.
@@ -117,7 +117,7 @@ let pokemonRepository = (function () {
       item.types = pokemonTypes;
       // item.types = details.types;
     }).catch(function (e) {
-      console.error(e);
+      window.alert(e);
     });
   }
   // Updates the search function with Bootsrtap classes.
