@@ -4,8 +4,6 @@ let pokemonRepository = (function () {
   let pokemonList = [];
   // Adds API link.
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
-  // Declares modal's container
-  let modalContainer = document.querySelector('#modal-container');
 
   // This method gives access to print the pokemonList from outside.
   function getAll () {
