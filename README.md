@@ -3,11 +3,24 @@
 
 ## About The Project
 
-- This is a basic responsive web application with HTML, CSS and Javascript which loads data from an external API.
+This is a basic responsive web application with HTML, CSS and JAVASCRIPT which loads data from an external API.
 
 ## Project dependencies:
 
-- The app is built using HTML, CSS and JS.
+This app is built based on ECMAScript2015(ES6).
+
+## Technologies:
+
+The following technologies are used:
+- [PokéAPI](https://github.com/PokeAPI/pokeapi)
+- [jQuery](https://jquery.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Atom](https://atom.io/)
+- [Prettier](https://prettier.io/)
+- [ESLint](https://eslint.org/)
+
+## API:
+https://pokeapi.co/
 
 ## Project link:
 
