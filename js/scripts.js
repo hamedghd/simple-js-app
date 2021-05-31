@@ -29,11 +29,11 @@ let pokemonRepository = (function () {
       if (Object.keys(pokemon).filter(e => pokemonKeys.indexOf(e) !== -1).length === pokemonKeys.length) {
         return true;
       } else {
-        console.error('All the required keys are not provided!');
+        window.alert('All the required keys are not provided!');
         return false;
       }
     } else {
-      console.error('Input is not an object!');
+      window.alert('Input is not an object!');
       return false;
     }
   }
@@ -64,8 +64,8 @@ let pokemonRepository = (function () {
     button.classList.add('btn');
     button.classList.add('btn-primary');
     button.classList.add('btn-lg');
-    button.setAttribute('data-target', "#exampleModal");
-    button.setAttribute('data-toggle',"modal");
+    button.setAttribute('data-target', '#exampleModal');
+    button.setAttribute('data-toggle','modal');
     // Appends the button item to the list item.
     listItem.appendChild(button);
 
