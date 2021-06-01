@@ -9,17 +9,24 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="dist/styles.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+
   </head>
   <body>
     <header class="container-fluid pt-3">
       <img src="img/pokedex.png" alt="Pokedex-logo" class="pokemon-logo row-sm mw-100"><br>
       <br>
-      <form class="text-light" role="search">
-        <div class="m-3 row">
-          <!-- <label for="search-bar" class="form-label">Search by name:</label> -->
+      <!-- <form class="text-light" role="search">
+        <div class="mx-auto mw-100 search-bar">
           <input type="text" placeholder="Search by name" id="search-bar" class="form-control">
         </div>
+      </form> -->
+      <nav class="navbar">
+      <form class="mx-auto mw-100 text-light" role="search">
+          <!-- <label for="search-bar" class="form-label">Search by name:</label> -->
+          <input type="text" placeholder="Search by name" id="search-bar" class="form-control">
       </form>
+      </nav>
       <br>
     </header>
     <main class="page-body">
