@@ -13,9 +13,6 @@ body {
 .container-fluid {
   background-color: var(--bgcolor1);
 }
-.pokemon-logo {
-  max-width: 100%;
-}
 .btn-primary {
   background-color: var(--bgcolor4);
   color: var(--txtcolor1);
