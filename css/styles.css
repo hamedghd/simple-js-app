@@ -27,14 +27,14 @@ body {
 .list-group {
   /*removes the markers/bullets*/
   list-style-type: none;
-  padding: 20px;
+  padding: 0px;
   margin: 0 auto;
   width: 600px;
   max-width: 100%;
 }
 .group-list-item {
   background-color: var(--bgcolor3);
-  margin: 5px;
+  margin: 15px;
   padding: 10px;
   border-radius: .3rem;
 }
@@ -54,4 +54,11 @@ body {
 mark {
   background-color: var(--bgcolor3);
   color: var(--txtcolor1);
+}
+#search-bar {
+  width: 580px;
+  max-width: 100%;
+}
+.navbar {
+  padding: 0;
 }
