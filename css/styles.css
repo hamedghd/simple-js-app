@@ -56,6 +56,8 @@ mark {
   color: var(--txtcolor1);
 }
 #search-bar {
+  /* 20px reduced from the 600px width,
+  because of the padding of group-list-item class */
   width: 580px;
   max-width: 100%;
 }
