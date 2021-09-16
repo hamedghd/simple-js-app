@@ -1,4 +1,7 @@
 # A simple JavaScript App (Pokédex)
+<p align="center">
+  <img src="img/pokedex-screen1.png" width="520">
+  </p>
 
 
 ## About The Project
